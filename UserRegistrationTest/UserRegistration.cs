@@ -45,5 +45,18 @@ namespace UserRegistrationTest
                 Assert.AreEqual(actual ,expected);
             }
         }
+
+        [TestMethod]
+        [DataRow(new string[] { "91 8087905735","91 8421719373" ,"91 1234567890" ,"91 7894561230"},true)]
+        [DataRow(new string[] { "1 45677845","2- 123456"},false)]
+        public void Check_For_Mobile_Number(string[] arr , bool expected)
+        {
+            Registration register = new Registration();
+            foreach(string number in arr)
+            {
+                bool actual = register.Check_For_Mobile_Number(number);
+                Assert.AreEqual(actual ,expected);
+            }
+        }
     }
 }

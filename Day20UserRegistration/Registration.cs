@@ -53,5 +53,20 @@ namespace Day20UserRegistration
                 return false;
             }
         }
+
+        public bool Check_For_Mobile_Number(string MobileNumber)
+        {
+            string pattern = "^[0-9]{2,}[' '][0-9]{10}$";
+            if(Regex.IsMatch(MobileNumber,pattern))
+            {
+                Console.WriteLine("{0} is valid", MobileNumber);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("{0} is not valid", MobileNumber);
+                return false;
+            }
+        }
     }
 }
