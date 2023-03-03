@@ -38,5 +38,20 @@ namespace Day20UserRegistration
                 return false;
             }
         }
+        
+        public bool Check_For_Email(string Email)
+        {
+            string pattern = "^[A-Za-z]{1,}?[.][A-Za-z]{1,}?[@][a-z]{1,}?[.][a-z]{1,}?[.][a-z]{1,}$"; 
+            if(Regex.IsMatch(Email , pattern))
+            {
+                Console.WriteLine("{0} is valid",Email);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("{0} is not valid", Email);
+                return false;
+            }
+        }
     }
 }

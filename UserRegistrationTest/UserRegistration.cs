@@ -32,5 +32,18 @@ namespace UserRegistrationTest
                 Assert.AreEqual(actual ,expected);
             }
         }
+        
+        [TestMethod]
+        [DataRow(new string[] { "abc.xyz@bl.co.in", "rahul.abc@bridglabz.co.in" },true)]
+        [DataRow(new string[] {"abc100@gmail.com"},false)]
+        public void Check_For_Email(string[] arr , bool expected)
+        {
+            Registration register = new Registration();
+            foreach(string email in arr)
+            {
+                bool actual = register.Check_For_Email(email);
+                Assert.AreEqual(actual ,expected);
+            }
+        }
     }
 }
