@@ -82,5 +82,20 @@ namespace Day20UserRegistration
                 return false;
             }
         }
+
+        public bool Password_Contains_Atleast_One_UpperCase(string Password)
+        {
+            string pattern = "^[A-Za-z0-9]{1,}[A-Za-z0-9@,.#$*&]{7,}$";
+            if(Regex.IsMatch(Password,pattern))
+            {
+                Console.WriteLine("{0} is valid", Password);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("{0} is not valid", Password);
+                return false;
+            }
+        }
     }
 }
