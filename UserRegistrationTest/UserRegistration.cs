@@ -58,5 +58,18 @@ namespace UserRegistrationTest
                 Assert.AreEqual(actual ,expected);
             }
         }
+
+        [TestMethod]
+        [DataRow(new string[] {"RAHULg@1234","123rahul@12","Rahul@123", "111@rahul" },true)]
+        [DataRow(new string[] {"RAHL@1","SSS#"},false)]
+        public void check_Password_Contains_Eight_Character(string[] arr , bool expected)
+        {
+            Registration register = new Registration();
+            foreach(string passwd in arr)
+            {
+                bool actual = register.Password_Contains_Eight_Character(passwd);
+                Assert.AreEqual(actual ,expected);
+            }
+        }
     }
 }

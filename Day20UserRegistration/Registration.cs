@@ -68,5 +68,19 @@ namespace Day20UserRegistration
                 return false;
             }
         }
+        public bool Password_Contains_Eight_Character(string Password)
+        {
+            string Pattern = "^[A -Za-z0-9@,.#*$&]{8,}$";// "^[A-Za-z0-9$,@,#,&,*].{8,}$"; 
+            if (Regex.IsMatch(Password,Pattern))
+            {
+                Console.WriteLine("{0} is valid",Password);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("{0} is not valid", Password);
+                return false;
+            }
+        }
     }
 }
