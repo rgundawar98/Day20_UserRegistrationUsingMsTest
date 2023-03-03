@@ -23,5 +23,20 @@ namespace Day20UserRegistration
                 return false;
             }
         }
+
+        public bool Check_Last_Name(string Lastname)
+        {
+            string pattern = "^[A-Z]{1}[a-z]{2,}$";
+            if(Regex.IsMatch(Lastname, pattern))
+            {
+                Console.WriteLine("{0} is valid", Lastname);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("{0} is not valid", Lastname);
+                return false;
+            }
+        }
     }
 }
