@@ -84,5 +84,17 @@ namespace UserRegistrationTest
                 Assert.AreEqual(actual, expected);
             }
         }
+        [TestMethod]
+        [DataRow(new string[] { "Rahul1#0", "Rahul12@1", "Rupali@11" },true)]
+        [DataRow(new string[] {"H1234@","RUTa%%%&"},false)]
+        public void Check_Password_Contains_One_Numeric_Number(string[] arr, bool expected)
+        {
+            Registration register = new Registration();
+            foreach(string passwd in arr)
+            {
+                bool actual = register.Password_Contains_One_Numeric_Number(passwd);
+                Assert.AreEqual(actual, expected);
+            }
+        }
     }
 }
