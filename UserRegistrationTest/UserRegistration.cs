@@ -96,5 +96,18 @@ namespace UserRegistrationTest
                 Assert.AreEqual(actual, expected);
             }
         }
+
+        [TestMethod]
+        [DataRow(new string[] { "Sandy&1rah" },true)]
+        [DataRow(new string[] {"Saduu12j","Raj@", "Harry@12" },false)]
+        public void Check_Password_Has_One_Special_Character(string[] arr, bool expected)
+        {
+            Registration register = new Registration();
+            foreach(string passwd in arr)
+            {
+                bool actual = register.Password_Contains_At_Least_One_Special_character(passwd);
+                Assert.AreEqual(actual,expected);
+            }
+        }
     }
 }

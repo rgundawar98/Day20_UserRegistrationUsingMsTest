@@ -112,5 +112,20 @@ namespace Day20UserRegistration
                 return false;
             }
         }
+
+        public bool Password_Contains_At_Least_One_Special_character(string Password)
+        {
+            string Pattern = "^[A-Za-z0-9]{1,}[@#$&*]{1}[A-Za-z0-9@,.#*$&]{6,}$"; //Sandy&1rah
+            if (Regex.IsMatch(Password,Pattern))
+            {
+                Console.WriteLine("{0} is valid");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("{0} is not valid");
+                return false;
+            }
+        }
     }
 }
